@@ -31,3 +31,4 @@ Right now the probabilities are hardcoded in and I'd have to update them on the 
 # Todo
 
 I plan to create a Processing sketch to make a very visually appealing output screen for displaying the prizes won. This is why there's a bit at the end of the Arduino code that reads "send to Processing" - it's all commented out for now so it doesn't accidentally interfere with anything else in the code while I write the Processing sketch separately. 
+Processing Text: https://github.com/shiffman/LearningProcessing/blob/master/chp17_strings/exercise_17_10_interpolate_home/exercise_17_10_interpolate_home.pde
