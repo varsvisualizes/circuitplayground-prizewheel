@@ -11,7 +11,7 @@ You can use any one of the Circuit Playgrounds, the software will upload on all 
 The software used for this project is Arduino, which is free and open source. You can download it onto whatever computer is being used for the outreach using [this link through the Arduino page.](https://www.arduino.cc/en/software) 
 
 ## Processing
-The software used to pretty-up the output is Processing. This is also a free and open source software. You can download it from (this link through the Processing Foundation.)[https://processing.org/]
+The software used to pretty-up the output is Processing. This is also a free and open source software. You can download it from [this link through the Processing Foundation.](https://processing.org/)
 
 # Progress
 
@@ -25,7 +25,8 @@ Once we got in the prizes, the code got a little more sophisticated. I broke dow
 
 <img width="1160" alt="Screen Shot 2023-09-30 at 11 22 56 AM" src="https://github.com/varsvisualizes/circuitplayground-prizewheel/assets/47091936/6ecc4c98-d5d1-4293-9d22-b6cb2c73ebaf">
 
-Right now the probabilities are hardcoded in and I'd have to update them on the fly during the event as the prizes run out.
+
+Right now the probabilities are hardcoded in and I'd have to update them on the fly during the event as the prizes run out. If there's time I'd like to update the code so it automatically deducts from the prize pool every time someone wins something, but there's a risk of the CPB getting shaken and accidentally deducting unnecessarily. I'll have to think about whether it's worth the automation. 
 
 # Todo
 
