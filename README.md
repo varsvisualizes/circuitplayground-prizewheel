@@ -17,8 +17,6 @@ The software used to pretty-up the output is Processing. This is also a free and
 
 In the very first demo, it was a simple shake to trigger some lights, a victory tune, and 1 of 2 outputs: a sticker or a bookmark.
 
-<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/869856084?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IMG_3640"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-
 Once we got in the prizes, the code got a little more sophisticated. I broke down potential outputs based on the prizes available. 
 
 <img width="1160" alt="Screen Shot 2023-09-30 at 11 22 56 AM" src="https://github.com/varsvisualizes/circuitplayground-prizewheel/assets/47091936/6ecc4c98-d5d1-4293-9d22-b6cb2c73ebaf">
@@ -27,4 +25,4 @@ Right now the probabilities are hardcoded in and I'd have to update them on the 
 
 # Todo
 
-I plan to create a Processing sketch to make a very visually appealing output screen for displaying the prizes won, and advertising the game to be played. 
+I plan to create a Processing sketch to make a very visually appealing output screen for displaying the prizes won. This is why there's a bit at the end of the Arduino code that reads "send to Processing" - it's all commented out for now so it doesn't accidentally interfere with anything else in the code while I write the Processing sketch separately. 
