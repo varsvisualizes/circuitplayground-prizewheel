@@ -10,6 +10,8 @@ You can use any one of the Circuit Playgrounds, the software will upload on all 
 ## Arduino
 The software used for this project is Arduino, which is free and open source. You can download it onto whatever computer is being used for the outreach using [this link through the Arduino page.](https://www.arduino.cc/en/software) 
 
+The version of Arduino I have on my computer is v1.8. The work computer seems to only want to download v2.2, and I don't quite know how to connect the board to that version yet. I plan to put in a PNR to get the legacy v1.8 version installed on my computer, and we may also get that version installed on some of the staff training & programming laptops. More to come if I can figure out the installation process for v2.2. 
+
 ## Processing
 The software used to pretty-up the output is Processing. This is also a free and open source software. You can download it from [this link through the Processing Foundation.](https://processing.org/)
 
@@ -26,8 +28,20 @@ Once we got in the prizes, the code got a little more sophisticated. I broke dow
 <img width="1160" alt="Screen Shot 2023-09-30 at 11 22 56 AM" src="https://github.com/varsvisualizes/circuitplayground-prizewheel/assets/47091936/6ecc4c98-d5d1-4293-9d22-b6cb2c73ebaf">
 
 
+After establishing the probabilities, I created a Processing sketch that would display the text in a larger format on the screen. I also added unique lights for each prize won.
+
+https://github.com/varsvisualizes/circuitplayground-prizewheel/assets/47091936/d5405859-70d8-4a62-af24-3610611c544e
+
+
+
+
+
+https://github.com/varsvisualizes/circuitplayground-prizewheel/assets/47091936/87e22197-b6f1-40ab-a4f5-a63728549d85
+
+
+
 Right now the probabilities are hardcoded in and I'd have to update them on the fly during the event as the prizes run out. If there's time I'd like to update the code so it automatically deducts from the prize pool every time someone wins something, but there's a risk of the CPB getting shaken and accidentally deducting unnecessarily. I'll have to think about whether it's worth the automation. 
 
 # Todo
 
-I plan to create a Processing sketch to make a very visually appealing output screen for displaying the prizes won. This is why there's a bit at the end of the Arduino code that reads "send to Processing" - it's all commented out for now so it doesn't accidentally interfere with anything else in the code while I write the Processing sketch separately. 
+I hope to spice up the Processing sketch so it might have a cute animation when the prize is announced. Maybe it could look like a slot machine output, or just have the text wiggle and shake a bit! I'll keep working on it. 
