@@ -1,4 +1,4 @@
-# Prize Wheel: Circuit Playground BlueFruit
+# Prize Wheel: Circuit Playground Bluefruit
 A code for using a Circuit Playground Bluefruit as a prize wheel! Created for the STEM Teachers Open House at the Cox Science Center &amp; Aquarium.
 
 # Software & Hardware
@@ -16,6 +16,10 @@ The software used to pretty-up the output is Processing. This is also a free and
 # Progress
 
 In the very first demo, it was a simple shake to trigger some lights, a victory tune, and 1 of 2 outputs: a sticker or a bookmark.
+
+
+https://github.com/varsvisualizes/circuitplayground-prizewheel/assets/47091936/eb9b3e10-c0ca-4575-8b4b-3dba91afd146
+
 
 Once we got in the prizes, the code got a little more sophisticated. I broke down potential outputs based on the prizes available. 
 
