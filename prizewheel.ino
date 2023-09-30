@@ -37,11 +37,8 @@ int timer = 100;
 int lightVal;
 int num;
 int prize;
-int values[1];
 
 float X, Y, Z, totalAccel;
-
-float highestShake = 0;
 
 
 void setup() {
@@ -72,16 +69,11 @@ void loop() {
   if (lightVal < 100) {
 
     /*
-        Select the winning prize number & the number of times the lights will flash
+        Select a random winning prize number & random number of times the lights will flash
     */
 
     prize = random(1, 100);
-    if ((round(prize / 10)) == 0) {
-      num = 1;
-    }
-    else {
-      num = round(prize / 10);
-    }
+    num = random(1, 6);
 
     /*
         Check prize numbers (uncomment if you want to check)
@@ -110,9 +102,6 @@ void loop() {
     Z /= 10;
 
     totalAccel = sqrt(X * X + Y * Y + Z * Z);
-    if (totalAccel > highestShake) {
-      highestShake = totalAccel;
-    }
 
     /*
         Check shake values (uncomment if you want to check)
@@ -125,7 +114,7 @@ void loop() {
     */
 
     if (totalAccel > 25) {
-      Serial.println("Buddy, no need to shake so hard!");
+      //      Serial.println("Buddy, no need to shake so hard!");
     }
 
     /*
@@ -135,17 +124,10 @@ void loop() {
     if (totalAccel > 12) {
 
       for (int j = 0; j < num; j++) {
-
-        for (int i = 0; i < 10; i++) {
-          CircuitPlayground.setPixelColor(i,   0, 128, 128);
-          delay(timer);
-          CircuitPlayground.setPixelColor(i,   0, 0, 0);
-        }
-        for (int i = 9; i >= 0; i--) {
-          CircuitPlayground.setPixelColor(i,   0, 128, 128);
-          delay(timer);
-          CircuitPlayground.setPixelColor(i,   0, 0, 0);
-        }
+        /*
+          Have a neopixel color chase around the ring some random number of times
+        */
+        allColor(0, 128, 128);
       }
 
       /*
@@ -157,35 +139,24 @@ void loop() {
       CircuitPlayground.playTone(784, 100);
       CircuitPlayground.playTone(1047, 100);
 
-
-      /*
-          Output to the Serial Monitor what they won
-      */
-
-      Serial.println("Congrats! You win: ");
-
       if (prize < 10) {
-        Serial.println("An owl-shaped pencil sharpener!");
+        allColor(255, 0, 255);
       }
       else if (prize >= 10 && prize < 30) {
-        Serial.println("A chip clip!");
+        allColor(255, 255, 0);
       }
       else if (prize >= 30 && prize < 65) {
-        Serial.println("A pencil!");
+        allColor(0, 255, 0);
       }
       else if (prize >= 65) {
-        Serial.println("A pen!");
+        allColor(255, 255, 255);
       }
 
       /*
-           Send values to Processing for the prettier output
+           Send prize value to Processing for the prettier output
       */
 
-      values[0] = prize;
-      Serial.println(String(values[0]));
-
-
-      Serial.println("Come win again soon! :)");
+      Serial.println(prize);
     }
     else {
       CircuitPlayground.setPixelColor(0, 0, 0, 0);
@@ -197,5 +168,23 @@ void loop() {
      Refresh every 100ms
   */
   delay(timer);
+
+}
+
+/*
+   Function telling the Arduino how to have a Neopixel Chase
+*/
+void allColor(int r, int g, int b) {
+
+  for (int i = 0; i < 10; i++) {
+    CircuitPlayground.setPixelColor(i,   r, g, b);
+    delay(timer);
+    CircuitPlayground.setPixelColor(i,   0, 0, 0);
+  }
+  for (int i = 9; i >= 0; i--) {
+    CircuitPlayground.setPixelColor(i,   r, g, b);
+    delay(timer);
+    CircuitPlayground.setPixelColor(i,   0, 0, 0);
+  }
 
 }
