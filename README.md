@@ -15,6 +15,18 @@ The version of Arduino I have on my computer is v1.8. The work computer seems to
 ## Processing
 The software used to pretty-up the output is Processing. This is also a free and open source software. You can download it from [this link through the Processing Foundation.](https://processing.org/)
 
+# Set-Up Process
+
+1. Download the Arduino & Processing software to your computer.
+2. Download the Arduino & Processing files from this repository.
+3. Connect the Circuit Playground Bluefruit to the Arduino software. (Select the appropriate board & port combo - see above regarding my pending installation notes)
+4. Verify and upload the Arduino sketch. You'll hear a little "click!" when the Circuit Playground has successfully burned the code.
+5. Close out the Arduino sketch, and open up the Processing sketch.
+6. Hit the "Play" button on Processing.
+7. Shake the Circuit Playground - you should get the lights, sounds, and text output.
+8. Win your prize!
+
+
 # Progress
 
 In the very first demo, it was a simple shake to trigger some lights, a victory tune, and 1 of 2 outputs: a sticker or a bookmark.
