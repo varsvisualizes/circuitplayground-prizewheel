@@ -8,5 +8,4 @@ The hardware used for this project is the Circuit Playground Bluefruit. 4 Circui
 You can use any one of the Circuit Playgrounds, the software will upload on all of them.
 
 ## Arduino
-The software used for this project is Arduino, which is free and open source. You can download it onto whatever computer is being used for the outreach using [this link.](https://www.arduino.cc/en/software)
-
+The software used for this project is Arduino, which is free and open source. You can download it onto whatever computer is being used for the outreach using [this link.](https://www.arduino.cc/en/software) 
