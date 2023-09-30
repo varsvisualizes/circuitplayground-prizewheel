@@ -75,7 +75,7 @@ void loop() {
         Select the winning prize number & the number of times the lights will flash
     */
 
-    prize = random(0, 100);
+    prize = random(1, 100);
     if ((round(prize / 10)) == 0) {
       num = 1;
     }
@@ -152,37 +152,38 @@ void loop() {
           Winning music tones
       */
 
-      //            CircuitPlayground.playTone(523, 100);
-      //            CircuitPlayground.playTone(659, 100);
-      //            CircuitPlayground.playTone(784, 100);
-      //            CircuitPlayground.playTone(1047, 100);
+      CircuitPlayground.playTone(523, 100);
+      CircuitPlayground.playTone(659, 100);
+      CircuitPlayground.playTone(784, 100);
+      CircuitPlayground.playTone(1047, 100);
 
 
       /*
           Output to the Serial Monitor what they won
       */
 
-            Serial.println("Congrats! You win: ");
-      //
-      //      if (num > 3) {
-      //        Serial.println("Sticker!");
-      //      }
-      //      else {
-      //        Serial.println("Bookmark!");
-      //      }
+      Serial.println("Congrats! You win: ");
 
-              if(prize < 10) {
-                Serial.println("An owl-shaped pencil sharpener!");
-              }
-              else if(prize >= 10 && prize < 30) {
-                Serial.println("A chip clip!");
-              }
-              else if(prize >= 30 && prize < 65) {
-                Serial.println("A pencil!");  
-              }
-              else if(prize >= 65) {
-                Serial.println("A pen!");
-              }
+      if (prize < 10) {
+        Serial.println("An owl-shaped pencil sharpener!");
+      }
+      else if (prize >= 10 && prize < 30) {
+        Serial.println("A chip clip!");
+      }
+      else if (prize >= 30 && prize < 65) {
+        Serial.println("A pencil!");
+      }
+      else if (prize >= 65) {
+        Serial.println("A pen!");
+      }
+
+      /*
+           Send values to Processing for the prettier output
+      */
+
+      values[0] = prize;
+      Serial.println(String(values[0]));
+
 
       Serial.println("Come win again soon! :)");
     }
@@ -192,11 +193,9 @@ void loop() {
 
   }
 
-  // send to Processing
-  //  values[0] = num;
-  //  Serial.println(String(values[0]));
-
-
+  /*
+     Refresh every 100ms
+  */
   delay(timer);
 
 }
