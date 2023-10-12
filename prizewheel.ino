@@ -7,25 +7,8 @@
     lights will sweep back and forth for a random number of runs, and then the Serial Monitor
     will output the prize won by the player.
 
-    Our prize inventory is:
+    12 October 2023
 
-    40 Owl Shaped Pencil Sharpeners
-    80 clip chips
-    ~150 pencils
-    ~150 pens
-
-    Based on these numbers, I'll give the players a...
-
-    9% chance of winning the pencil sharpener
-    19% chance of winning the chip clip
-    35% chance of winning a pencil
-    35% chance of winning a pen
-
-    These numbers can be modified on the fly as we run out of prizes to give out. Perhaps in
-    another iteration I'll even make it an automatic statistics system, but for today,
-    I'll hardcode in the probabilites.
-
-    30 September 2023
     Carmen Peterson
 
 */
@@ -37,6 +20,20 @@ int timer = 100;
 int lightVal;
 int num;
 int prize;
+
+/*
+   Establishing the probabilities within the Arduino sketch
+*/
+
+int owls = 40;
+int chipClips = 80;
+int pencils = 150;
+int pens = 150;
+
+int prob1;
+int prob2;
+int prob3;
+int prob4;
 
 float X, Y, Z, totalAccel;
 
@@ -69,10 +66,19 @@ void loop() {
   if (lightVal < 100) {
 
     /*
+        Calculate the likelihood of winning each item
+    */
+
+    prob1 = owls;
+    prob2 = owls + chipClips;
+    prob3 = owls + chipClips + pencils;
+    prob4 = owls + chipClips + pencils + pens;
+
+    /*
         Select a random winning prize number & random number of times the lights will flash
     */
 
-    prize = random(1, 100);
+    prize = random(1, prob4);
     num = random(1, 6);
 
     /*
@@ -121,7 +127,7 @@ void loop() {
         If a general shake is detected, complete the game code & output the prize won
     */
 
-    if (totalAccel > 12) {
+    if (totalAccel > 15) {
 
       for (int j = 0; j < num; j++) {
         /*
@@ -134,21 +140,33 @@ void loop() {
           Winning music tones
       */
 
-      CircuitPlayground.playTone(523, 100);
-      CircuitPlayground.playTone(659, 100);
-      CircuitPlayground.playTone(784, 100);
-      CircuitPlayground.playTone(1047, 100);
+            CircuitPlayground.playTone(523, 100);
+            CircuitPlayground.playTone(659, 100);
+            CircuitPlayground.playTone(784, 100);
+            CircuitPlayground.playTone(1047, 100);
 
-      if (prize < 10) {
+            Serial.println(prize);
+            
+      //      Serial.print("You won ");
+
+      if (prize < prob1) {
+        //        Serial.println("an owl sharpener!");
+        owls--;
         allColor(255, 0, 255);
       }
-      else if (prize >= 10 && prize < 30) {
+      else if (prize >= prob1 && prize < prob2) {
+        //        Serial.println("a chip clip!");
+        chipClips--;
         allColor(255, 255, 0);
       }
-      else if (prize >= 30 && prize < 65) {
+      else if (prize >= prob2 && prize < prob3) {
+        //        Serial.println("a pencil!");
+        pencils--;
         allColor(0, 255, 0);
       }
-      else if (prize >= 65) {
+      else if (prob3 >= prob4) {
+        //        Serial.println("a pen!");
+        pens--;
         allColor(255, 255, 255);
       }
 
@@ -156,7 +174,23 @@ void loop() {
            Send prize value to Processing for the prettier output
       */
 
-      Serial.println(prize);
+      /*
+            These print values are to make sure the probabilities are updating properly
+            Uncomment if you ever need to check and make sure the math is working
+      */
+
+      //      Serial.print("There remain ");
+      //      Serial.print(owls);
+      //      Serial.print(" owls, ");
+      //      Serial.print(chipClips);
+      //      Serial.print(" chip clips, ");
+      //      Serial.print(pens);
+      //      Serial.print(" pencils, and ");
+      //      Serial.print(pens);
+      //      Serial.print(" pens. Total of ");
+      //      Serial.print(prob4);
+      //      Serial.print(" prizes remain!");
+      
     }
     else {
       CircuitPlayground.setPixelColor(0, 0, 0, 0);
