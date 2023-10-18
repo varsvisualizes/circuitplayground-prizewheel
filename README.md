@@ -10,8 +10,6 @@ You can use any one of the Circuit Playgrounds, the software will upload on all 
 ## Arduino
 The software used for this project is Arduino, which is free and open source. You can download it onto whatever computer is being used for the outreach using [this link through the Arduino page.](https://www.arduino.cc/en/software) 
 
-The version of Arduino I have on my computer is v1.8. The work computer seems to only want to download v2.2, and I don't quite know how to connect the board to that version yet. I plan to put in a PNR to get the legacy v1.8 version installed on my computer, and we may also get that version installed on some of the staff training & programming laptops. More to come if I can figure out the installation process for v2.2. 
-
 ## Processing
 The software used to pretty-up the output is Processing. This is also a free and open source software. You can download it from [this link through the Processing Foundation.](https://processing.org/)
 
@@ -51,9 +49,8 @@ https://github.com/varsvisualizes/circuitplayground-prizewheel/assets/47091936/d
 https://github.com/varsvisualizes/circuitplayground-prizewheel/assets/47091936/87e22197-b6f1-40ab-a4f5-a63728549d85
 
 
-
-Right now the probabilities are hardcoded in and I'd have to update them on the fly during the event as the prizes run out. If there's time I'd like to update the code so it automatically deducts from the prize pool every time someone wins something, but there's a risk of the CPB getting shaken and accidentally deducting unnecessarily. I'll have to think about whether it's worth the automation. 
+To be attached: Video footage from the day-of! 
 
 # Todo
 
-I hope to spice up the Processing sketch so it might have a cute animation when the prize is announced. Maybe it could look like a slot machine output, or just have the text wiggle and shake a bit! I'll keep working on it. 
+From the outreach event, I realized that the wait times took much longer than I anticipated. The lights ran a little longer than I would have liked, and the reset also took up time. Also, almost all the participants wanted to shake the Circuit Playground until something on-screen changed, which I worry may have led to some sensor overload. So, in my next iteration I'll reduce the light animation time and the amount of time their prize is announced on the screen, and I'll test to make sure that they can shake the Circuit Playground for the entire loading time without any negative consequences. 
