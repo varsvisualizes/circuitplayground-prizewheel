@@ -43,14 +43,19 @@ After establishing the probabilities, I created a Processing sketch that would d
 https://github.com/varsvisualizes/circuitplayground-prizewheel/assets/47091936/d5405859-70d8-4a62-af24-3610611c544e
 
 
+https://github.com/varsvisualizes/circuitplayground-prizewheel/assets/47091936/68ea128e-3c85-490e-8b8e-2839d479ba8f
+
+
+For the next iteration, I added in a few bells and whistles: I made a neutral page for the screen to display between rolls, and I threw in a confetti animation upon prize announcement.  
+
+On the day of the event, we had 145 people pass by our booth! Several enjoyed using the Circuit Playground and were excited to learn about the tech programs that we offer with the library systems, including classes on creative coding and tech toys. 
 
 
 
-https://github.com/varsvisualizes/circuitplayground-prizewheel/assets/47091936/87e22197-b6f1-40ab-a4f5-a63728549d85
+https://github.com/varsvisualizes/circuitplayground-prizewheel/assets/47091936/8f7e0f99-a8d8-4af5-b5b7-462c191c37de
 
 
-To be attached: Video footage from the day-of! 
 
 # Todo
 
-From the outreach event, I realized that the wait times took much longer than I anticipated. The lights ran a little longer than I would have liked, and the reset also took up time. Also, almost all the participants wanted to shake the Circuit Playground until something on-screen changed, which I worry may have led to some sensor overload. So, in my next iteration I'll reduce the light animation time and the amount of time their prize is announced on the screen, and I'll test to make sure that they can shake the Circuit Playground for the entire loading time without any negative consequences. 
+From the outreach event, I realized that the wait times took much longer than I anticipated. The lights ran a little longer than I would have liked, and the reset also took up time. Also, almost all the participants wanted to shake the Circuit Playground until something on-screen changed, which I worry may have led to some sensor overload. So, in my next iteration I'll reduce the light animation time and the amount of time their prize is announced on the screen, and I'll test to make sure that they can shake the Circuit Playground for the entire loading time without negatively impacting the prize result or overloading the program. Can't wait to roll it out again!
